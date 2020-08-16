@@ -1,1 +1,1 @@
-# myMath
+# MyMath
