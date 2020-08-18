@@ -13,6 +13,11 @@ public:
     };
 
   public:
+    int16_t encoad(uint8_t dataBuf[2]) {
+      i = 0;
+      memcpy(c, dataBuf, 2);
+      return i;
+    };
     void encoad(int16_t &targetBuf, uint8_t dataBuf[2]) {
       i = 0;
       memcpy(c, dataBuf, 2);
@@ -31,6 +36,11 @@ public:
     };
 
   public:
+    uint16_t encoad(uint8_t dataBuf[2]) {
+      i = 0;
+      memcpy(c, dataBuf, 2);
+      return i;
+    };
     void encoad(uint16_t &targetBuf, uint8_t dataBuf[2]) {
       i = 0;
       memcpy(c, dataBuf, 2);
@@ -49,6 +59,11 @@ public:
     };
 
   public:
+    int32_t encoad(uint8_t dataBuf[4]) {
+      i = 0;
+      memcpy(c, dataBuf, 4);
+      return i;
+    };
     void encoad(int32_t &targetBuf, uint8_t dataBuf[4]) {
       i = 0;
       memcpy(c, dataBuf, 4);
@@ -67,6 +82,11 @@ public:
     };
 
   public:
+    uint32_t encoad(uint8_t dataBuf[4]) {
+      i = 0;
+      memcpy(c, dataBuf, 4);
+      return i;
+    };
     void encoad(uint32_t &targetBuf, uint8_t dataBuf[4]) {
       i = 0;
       memcpy(c, dataBuf, 4);
@@ -85,6 +105,11 @@ public:
     };
 
   public:
+    int64_t encoad(uint8_t dataBuf[8]) {
+      i = 0;
+      memcpy(c, dataBuf, 8);
+      return i;
+    };
     void encoad(int64_t &targetBuf, uint8_t dataBuf[8]) {
       i = 0;
       memcpy(c, dataBuf, 8);
@@ -103,6 +128,11 @@ public:
     };
 
   public:
+    uint64_t encoad(uint8_t dataBuf[8]) {
+      i = 0;
+      memcpy(c, dataBuf, 8);
+      return i;
+    };
     void encoad(uint64_t &targetBuf, uint8_t dataBuf[8]) {
       i = 0;
       memcpy(c, dataBuf, 8);
