@@ -13,15 +13,15 @@ public:
     };
 
   public:
-    void clear() { i = 0; };
-    void write(int16_t val) { i = val; };
-    void write(uint8_t val0, uint8_t val1) {
+    void encoad(int16_t &targetBuf, uint8_t dataBuf[2]) {
       i = 0;
-      c[0] = val0;
-      c[1] = val1;
+      memcpy(c, dataBuf, 2);
+      targetBuf = i;
     };
-    int16_t read() { return i; };
-    uint8_t read(uint8_t i) { return c[i]; };
+    void decoad(uint8_t targetBuf[2], int16_t dataBuf) {
+      i = dataBuf;
+      memcpy(targetBuf, c, 2);
+    };
   } i16c;
 
   class UI16C {
@@ -31,15 +31,15 @@ public:
     };
 
   public:
-    void clear() { i = 0; };
-    void write(uint16_t val) { i = val; };
-    void write(uint8_t val0, uint8_t val1) {
+    void encoad(uint16_t &targetBuf, uint8_t dataBuf[2]) {
       i = 0;
-      c[0] = val0;
-      c[1] = val1;
+      memcpy(c, dataBuf, 2);
+      targetBuf = i;
     };
-    uint16_t read() { return i; };
-    uint8_t read(uint8_t i) { return c[i]; };
+    void decoad(uint8_t targetBuf[2], uint16_t dataBuf) {
+      i = dataBuf;
+      memcpy(targetBuf, c, 2);
+    };
   } ui16c;
 
   class I32C {
@@ -49,17 +49,15 @@ public:
     };
 
   public:
-    void clear() { i = 0; };
-    void write(int32_t val) { i = val; };
-    void write(uint8_t val0, uint8_t val1, uint8_t val2, uint8_t val3) {
+    void encoad(int32_t &targetBuf, uint8_t dataBuf[4]) {
       i = 0;
-      c[0] = val0;
-      c[1] = val1;
-      c[2] = val2;
-      c[3] = val3;
+      memcpy(c, dataBuf, 4);
+      targetBuf = i;
     };
-    int32_t read() { return i; };
-    uint8_t read(uint8_t i) { return c[i]; };
+    void decoad(uint8_t targetBuf[4], int32_t dataBuf) {
+      i = dataBuf;
+      memcpy(targetBuf, c, 4);
+    };
   } i32c;
 
   class UI32C {
@@ -69,17 +67,15 @@ public:
     };
 
   public:
-    void clear() { i = 0; };
-    void write(uint32_t val) { i = val; };
-    void write(uint8_t val0, uint8_t val1, uint8_t val2, uint8_t val3) {
+    void encoad(uint32_t &targetBuf, uint8_t dataBuf[4]) {
       i = 0;
-      c[0] = val0;
-      c[1] = val1;
-      c[2] = val2;
-      c[3] = val3;
+      memcpy(c, dataBuf, 4);
+      targetBuf = i;
     };
-    uint32_t read() { return i; };
-    uint8_t read(uint8_t i) { return c[i]; };
+    void decoad(uint8_t targetBuf[4], uint32_t dataBuf) {
+      i = dataBuf;
+      memcpy(targetBuf, c, 4);
+    };
   } ui32c;
 
   class I64C {
@@ -89,22 +85,15 @@ public:
     };
 
   public:
-    void clear() { i = 0; };
-    void write(int64_t val) { i = val; };
-    void write(uint8_t val0, uint8_t val1, uint8_t val2, uint8_t val3,
-               uint8_t val4, uint8_t val5, uint8_t val6, uint8_t val7) {
+    void encoad(int64_t &targetBuf, uint8_t dataBuf[8]) {
       i = 0;
-      c[0] = val0;
-      c[1] = val1;
-      c[2] = val2;
-      c[3] = val3;
-      c[4] = val4;
-      c[5] = val5;
-      c[6] = val6;
-      c[7] = val7;
+      memcpy(c, dataBuf, 8);
+      targetBuf = i;
     };
-    int64_t read() { return i; };
-    uint8_t read(uint8_t i) { return c[i]; };
+    void decoad(uint8_t targetBuf[8], int64_t dataBuf) {
+      i = dataBuf;
+      memcpy(targetBuf, c, 8);
+    };
   } i64c;
 
   class UI64C {
@@ -114,22 +103,15 @@ public:
     };
 
   public:
-    void clear() { i = 0; };
-    void write(uint64_t val) { i = val; };
-    void write(uint8_t val0, uint8_t val1, uint8_t val2, uint8_t val3,
-               uint8_t val4, uint8_t val5, uint8_t val6, uint8_t val7) {
+    void encoad(uint64_t &targetBuf, uint8_t dataBuf[8]) {
       i = 0;
-      c[0] = val0;
-      c[1] = val1;
-      c[2] = val2;
-      c[3] = val3;
-      c[4] = val4;
-      c[5] = val5;
-      c[6] = val6;
-      c[7] = val7;
+      memcpy(c, dataBuf, 8);
+      targetBuf = i;
     };
-    uint64_t read() { return i; };
-    uint8_t read(uint8_t i) { return c[i]; };
+    void decoad(uint8_t targetBuf[8], uint64_t dataBuf) {
+      i = dataBuf;
+      memcpy(targetBuf, c, 8);
+    };
   } ui64c;
 
   template <typename T1, typename T2, typename T3>
